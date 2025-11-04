@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feed the World</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- HOME SCREEN -->
+  <div id="home-screen" class="screen active">
+    <h1>Feed the World</h1>
+    <button onclick="startGame()">Play</button>
+    <button onclick="showScreen('achievements-screen')">Achievements</button>
+    <button onclick="showScreen('howto-screen')">How to Play</button>
+    <button onclick="showScreen('facts-screen')">Facts</button>
+  </div>
+
+  <!-- GAME SCREEN -->
+  <div id="game-screen" class="screen">
+    <div id="score-display">Score: <span id="score">0</span></div>
+    <div id="basket"></div>
+    <button id="pause-btn" onclick="pauseGame()">Pause</button>
+  </div>
+
+  <!-- PAUSE SCREEN -->
+  <div id="pause-screen" class="screen">
+    <h2>Game Paused</h2>
+    <button onclick="resumeGame()">Resume</button>
+    <button onclick="showScreen('settings-screen-game')">Settings</button>
+    <button onclick="showScreen('home-screen')">Home</button>
+  </div>
+
+  <!-- ACHIEVEMENTS SCREEN -->
+  <div id="achievements-screen" class="screen">
+    <h2>Achievements</h2>
+    <ul>
+      <li id="a1">🏅 A New Beginning – Play once</li>
+      <li id="a2">🥇 First Harvest – Score 100</li>
+      <li id="a3">🥈 Hunger Helper – Score 500</li>
+      <li id="a4">🥉 Nutrition Ninja – Score 1000</li>
+    </ul>
+    <button onclick="showScreen('home-screen')">Back</button>
+  </div>
+
+  <!-- FACTS SCREEN -->
+  <div id="facts-screen" class="screen">
+    <h2>Facts</h2>
+    <ul>
+      <li>1 in 9 people around the world doesn’t get enough food.</li>
+      <li>Bananas are rich in potassium.</li>
+      <li>Reducing food waste could feed over a billion people.</li>
+    </ul>
+    <button onclick="showScreen('home-screen')">Back</button>
+  </div>
+
+  <!-- HOW TO PLAY -->
+  <div id="howto-screen" class="screen">
+    <h2>How to Play</h2>
+    <p>Move the basket with arrow keys or mouse.</p>
+    <p>Catch fruits to gain points, avoid junk food!</p>
+    <button onclick="showScreen('home-screen')">Back</button>
+  </div>
+
+  <!-- SETTINGS -->
+  <div id="settings-screen-game" class="screen">
+    <h2>Settings</h2>
+    <label>Sound <input type="range" min="0" max="100"></label>
+    <label>Music <input type="range" min="0" max="100"></label>
+    <button onclick="showScreen('pause-screen')">Back</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
